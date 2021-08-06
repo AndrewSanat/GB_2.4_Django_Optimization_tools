@@ -1,0 +1,11 @@
+{% extends 'authapp/base.html' %}
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <h3>Поздравляем!</h3>
+        <div>Пользователь {{ user.email }} успешно активирован</div>
+    {% else %}
+        <h3>С сожалением сообщаем</h3>
+        <div>Пользователя не удалось активировать</div>
+    {% endif %}
+    <a href=" {% url 'main' %}" class="btn btn-primary">На главную</a>
+{% endblock %}
