@@ -7,10 +7,10 @@
         Уверены, что хотите удалить категорию <strong>{{ object.name }}</strong>?
         <form action="{% url 'admin:category_delete' object.pk %}" method="post">
             {% csrf_token %}
-            <input class="btn btn-danger" type="submit" value="удалить">
+            <input class="btn btn-danger" type="submit" value="Удалить">
         </form>
         <button class="btn btn-success">
-            <a href="{% url 'admin:categories' %}">отмена</a>
+            <a href="{% url 'admin:categories' %}">Отмена</a>
         </button>
     </div>
 {% endblock %}

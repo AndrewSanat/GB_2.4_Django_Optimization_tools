@@ -6,18 +6,18 @@
 {% block content %}
     <div class="users_list">
 		<button class="new_user">
-			<a href={% url 'admin:user_create' %}>новый пользователь</a>
+			<a href={% url 'admin:user_create' %}>Новый пользователь</a>
 		</button>
 		{% for object in object_list %}
 			<div class="user_record {% if not object.is_active %}not_active{% endif %}">
 				<img src="{{ object.avatar|media_folder_users }}" alt="{{ object.username }}">
 				<div class="user_role">
-					{% if object.is_superuser %}администратор{% else %}пользователь{% endif %}
+					{% if object.is_superuser %}Администратор{% else %}Пользователь{% endif %}
 					<button>
-						<a href={% url 'admin:user_update' object.pk %}>редактировать</a>
+						<a href={% url 'admin:user_update' object.pk %}>Редактировать</a>
 					</button>
 					<button>
-						<a href={% url 'admin:user_delete' object.pk %}>удалить</a>
+						<a href={% url 'admin:user_delete' object.pk %}>Удалить</a>
 					</button>
 				</div>
 				<div class="user_name">

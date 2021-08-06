@@ -6,7 +6,7 @@
 {% block content %}
     <div class="products_list">
 		<button class="new_product">
-			<a href={% url 'admin:product_create' category.pk %}>новый продукт</a>
+			<a href={% url 'admin:product_create' category.pk %}>Новый продукт</a>
 		</button>
 		
 		{% for object in objects %}
@@ -17,19 +17,19 @@
 				</div>
 				<div class="product_actions">
 					<button>
-						<a href={% url 'admin:product_read' object.pk %}>подробнее</a>
+						<a href={% url 'admin:product_read' object.pk %}>Подробнее</a>
 					</button>
 					<button>
-						<a href={% url 'admin:product_update' object.pk %}>редактировать</a>
+						<a href={% url 'admin:product_update' object.pk %}>Редактировать</a>
 					</button>
 					<button>
-						<a href={% url 'admin:product_delete' object.pk %}>удалить</a>
+						<a href={% url 'admin:product_delete' object.pk %}>Удалить</a>
 					</button>
 				</div>
 				<div class="summary">
-					<b>цена</b>
+					<b>Цена</b>
 					<p>{{ object.price }} руб</p>
-					<b>количество</b>
+					<b>Количество</b>
 					<p>{{ object.quantity }}</p>
 				</div>
 				<div class="product_desc">

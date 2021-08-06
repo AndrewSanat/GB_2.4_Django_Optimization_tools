@@ -5,7 +5,7 @@
 {% block content %}
     <div class="categories_list">
         <button class="new_category">
-            <a href={% url 'admin:category_create' %}>новая категория</a>
+            <a href={% url 'admin:category_create' %}>Новая категория</a>
         </button>
 
         {% for object in objects %}
@@ -15,13 +15,13 @@
                 </div>
                 <div class="category_actions">
                     <button>
-                        <a href={% url 'admin:products' object.pk %}>товары категории</a>
+                        <a href={% url 'admin:products' object.pk %}>Товары категории</a>
                     </button>
                     <button>
-                        <a href={% url 'admin:category_update' object.pk %}>редактировать</a>
+                        <a href={% url 'admin:category_update' object.pk %}>Редактировать</a>
                     </button>
                     <button>
-                        <a href={% url 'admin:category_delete' object.pk %}>удалить</a>
+                        <a href={% url 'admin:category_delete' object.pk %}>Удалить</a>
                     </button>
                 </div>
                 <div class="category_desc">
