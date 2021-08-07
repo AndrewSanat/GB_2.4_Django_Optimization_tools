@@ -7,11 +7,11 @@
         <form class="form-horizontal" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <input class="form-control" type="submit" value="сохранить">
+            <input class="form-control" type="submit" value="Сохранить">
         </form>
         <button class="btn btn-round form-control last">
             <a href="{% url 'admin:categories' %}">
-                к списку категорий
+                К списку категорий
             </a>
         </button>
     </div>

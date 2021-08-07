@@ -9,36 +9,36 @@
         </div>
         <img src="/media/{{ object.image|default:'products_images/default.jpg' }}" alt="{{ object.name }}">
         <div class="summary">
-            <b>цена</b>
+            <b>Цена</b>
             <p>{{ object.price }} руб</p>
-            <b>количество</b>
+            <b>Количество</b>
             <p>{{ object.quantity }}</p>
-            <b>в каталоге</b>
+            <b>В каталоге</b>
             <p>{% if object.is_active %}да{% else %}нет{% endif %}</p>
             <p>
                 <button>
-                    <a href={% url 'admin:product_update' object.pk %}>редактировать</a>
+                    <a href={% url 'admin:product_update' object.pk %}>Редактировать</a>
                 </button>
             </p>
             <p>
                 <button>
-                    <a href={% url 'admin:product_delete' object.pk %}>удалить</a>
+                    <a href={% url 'admin:product_delete' object.pk %}>Удалить</a>
                 </button>
             </p>
             <p>
                 <button>
-                    <a href={% url 'admin:products' object.category.pk %}>назад</a>
+                    <a href={% url 'admin:products' object.category.pk %}>Назад</a>
                 </button>
             </p>
         </div>
         <div class="product_desc">
-            <b>краткая информация</b>
+            <b>Краткая информация</b>
             <p>
                 {{ object.short_desc }}
             </p>
             <br>
             <br>
-            <b>подробная информация</b>
+            <b>Подробная информация</b>
             <p>
                 {{ object.description }}
             </p>
