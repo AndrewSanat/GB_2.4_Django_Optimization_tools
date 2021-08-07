@@ -28,9 +28,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -82,6 +82,8 @@ TEMPLATES = [
 ]
 
 LOGIN_URL = '/'
+
+LOGIN_ERROR_URL = '/auth/login/'
 
 WSGI_APPLICATION = 'geekshop.wsgi.application'
 
