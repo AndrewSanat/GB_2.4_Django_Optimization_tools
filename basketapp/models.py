@@ -3,17 +3,7 @@ from django.conf import settings
 from mainapp.models import Product
 
 
-class BasketQuerySet(models.QuerySet):
-
-    def delete(self):
-        for object in self:
-            object.product.quantity += object.quantity
-            object.product.save()
-        super().delete()
-
-
 class Basket(models.Model):
-    objects = BasketQuerySet.as_manager()
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
@@ -58,9 +48,4 @@ class Basket(models.Model):
         [basket_items_dic.update({item.product: item.quantity}) for item in basket_items]
 
         return basket_items_dic
-
-    def delete(self):
-        self.product.quantity += self.quantity
-        self.product.save()
-        super().delete()
 
